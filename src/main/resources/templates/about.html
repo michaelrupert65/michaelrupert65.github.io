@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>About ArTeach</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div class="flex-container">
+		<div class="form">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				Imperdiet sed euismod nisi porta lorem mollis aliquam. Etiam sit
+				amet nisl purus in mollis. Magna eget est lorem ipsum. Ultrices
+				gravida dictum fusce ut placerat orci nulla pellentesque dignissim.
+				Tincidunt nunc pulvinar sapien et ligula. Et leo duis ut diam quam
+				nulla. Leo a diam sollicitudin tempor id eu nisl nunc mi. Quam nulla
+				porttitor massa id neque aliquam vestibulum. Nisl condimentum id
+				venenatis a condimentum vitae. Et malesuada fames ac turpis egestas
+				sed. Facilisi nullam vehicula ipsum a arcu cursus vitae congue
+				mauris. Neque convallis a cras semper auctor. Nunc mi ipsum faucibus
+				vitae aliquet nec. Porta nibh venenatis cras sed.</p>
+
+			<p>Sit amet commodo nulla facilisi nullam. Velit sed ullamcorper
+				morbi tincidunt ornare massa eget. Varius duis at consectetur lorem
+				donec massa sapien faucibus. Dictumst vestibulum rhoncus est
+				pellentesque elit ullamcorper dignissim cras. Nunc mi ipsum faucibus
+				vitae aliquet nec ullamcorper sit. Feugiat pretium nibh ipsum
+				consequat nisl. Orci a scelerisque purus semper eget duis at tellus
+				at. Nunc sed augue lacus viverra vitae congue eu consequat. Eget
+				nunc lobortis mattis aliquam faucibus purus in massa tempor.
+				Convallis posuere morbi leo urna molestie at elementum. Ac ut
+				consequat semper viverra nam libero justo. Semper viverra nam libero
+				justo laoreet sit amet cursus sit.</p>
+
+			<p>Quam id leo in vitae turpis massa sed elementum tempus. Nam
+				libero justo laoreet sit amet cursus sit amet. Ipsum nunc aliquet
+				bibendum enim facilisis gravida. Commodo sed egestas egestas
+				fringilla phasellus faucibus scelerisque eleifend donec. Venenatis
+				cras sed felis eget velit aliquet sagittis. At tellus at urna
+				condimentum mattis pellentesque. Ultrices eros in cursus turpis
+				massa tincidunt dui ut. Gravida quis blandit turpis cursus in.
+				Tincidunt vitae semper quis lectus nulla at volutpat diam ut. Sit
+				amet risus nullam eget felis. Sollicitudin tempor id eu nisl nunc mi
+				ipsum faucibus. Id donec ultrices tincidunt arcu non sodales neque.
+				Nunc mattis enim ut tellus elementum sagittis vitae et leo. Tempor
+				orci dapibus ultrices in iaculis nunc sed. Urna molestie at
+				elementum eu facilisis sed odio morbi quis. Egestas tellus rutrum
+				tellus pellentesque eu tincidunt tortor aliquam. Nisi est sit amet
+				facilisis magna etiam tempor orci.</p>
+
+			<p>Et leo duis ut diam quam nulla. Placerat orci nulla
+				pellentesque dignissim. Vivamus arcu felis bibendum ut. Massa enim
+				nec dui nunc mattis enim. Est velit egestas dui id ornare arcu odio
+				ut. Urna id volutpat lacus laoreet non curabitur. Dui nunc mattis
+				enim ut tellus elementum sagittis vitae. Nunc lobortis mattis
+				aliquam faucibus purus in massa tempor. Etiam sit amet nisl purus in
+				mollis. Egestas fringilla phasellus faucibus scelerisque eleifend
+				donec pretium vulputate. Cursus risus at ultrices mi tempus. Sit
+				amet consectetur adipiscing elit. Nibh sed pulvinar proin gravida.
+				Mus mauris vitae ultricies leo integer malesuada nunc vel risus.
+				Ante in nibh mauris cursus.</p>
+
+			<p>Nec nam aliquam sem et tortor. Porttitor eget dolor morbi non
+				arcu risus. Eget lorem dolor sed viverra ipsum nunc aliquet. Feugiat
+				nibh sed pulvinar proin gravida hendrerit lectus a. Enim diam
+				vulputate ut pharetra sit amet. Odio eu feugiat pretium nibh ipsum
+				consequat. Sed cras ornare arcu dui vivamus arcu felis bibendum ut.
+				Arcu cursus euismod quis viverra nibh. Ultricies mi quis hendrerit
+				dolor magna eget est lorem. Tellus in hac habitasse platea dictumst
+				vestibulum. Posuere urna nec tincidunt praesent semper feugiat nibh.
+				Feugiat nibh sed pulvinar proin gravida hendrerit lectus a. Est
+				lorem ipsum dolor sit. Mi eget mauris pharetra et.</p>
+		</div>
+	</div>
+
+</body>
+</html>

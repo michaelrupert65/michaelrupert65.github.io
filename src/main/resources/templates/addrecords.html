@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="login.css" type="text/css" rel="stylesheet" />
+<title>Add Information to Database</title>
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+		<div sec:authentication="name">
+		</div>
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="submitEventContainer">
+		<div id="form-container">
+			<form id="inputevent" method="GET" action="/settings">
+				<button class="button Header__item HeaderButton">Add Event</button>
+			</form>
+			<form id="inputevent" method="GET" action="/adddiscipline">
+				<button class="button Header__item HeaderButton">Add
+					Discipline</button>
+			</form>
+			<form id="inputevent" method="GET" action="/addteacher">
+				<button class="button Header__item HeaderButton">Add
+					Teacher</button>
+			</form>
+			<form id="inputevent" method="GET" action="/addFacility">
+				<button class="button Header__item HeaderButton">Add
+					Facility</button>
+			</form>
+			<form id="inputevent" method="GET" action="/newaccount">
+				<button class="button Header__item HeaderButton">Add Member</button>
+			</form>			
+			<form id="inputevent" method="GET" action="/addclass">			
+				<button class="button Header__item HeaderButton">Add Class</button>
+			</form>
+			<form id="inputevent" method="GET" action="/editevent">
+				<button class="button Header__item HeaderButton">Edit Event</button>
+			</form>
+			<form id="inputevent" method="GET" action="/adddiscipline">
+				<button class="button Header__item HeaderButton">Edit
+					Discipline</button>
+			</form>
+			<form id="inputevent" method="GET" action="/addteacher">
+				<button class="button Header__item HeaderButton">Edit
+					Teacher</button>
+			</form>
+			<form id="inputevent" method="GET" action="/addFacility">
+				<button class="button Header__item HeaderButton">Edit
+					Facility</button>
+			</form>
+			<form id="inputevent" method="GET" action="/newaccount">
+				<button class="button Header__item HeaderButton">Edit Member</button>
+			</form>
+			
+			<form id="inputevent" method="GET" action="/updateclass">			
+				<button class="button Header__item HeaderButton">Edit Class</button>
+			</form>
+			
+			<form id="inputevent" method="GET" action="/removeevent">
+				<button class="button Header__item HeaderButton">Remove
+					Event</button>
+			</form>
+			<form id="inputevent" method="GET" action="/removediscipline">
+				<button class="button Header__item HeaderButton">Remove
+					Discipline</button>
+			</form>
+			<form id="inputevent" method="GET" action="/adddiscipline">
+				<button class="button Header__item HeaderButton">Remove
+					Teacher</button>
+			</form>
+			<form id="inputevent" method="GET" action="/removeevent">
+				<button class="button Header__item HeaderButton">Remove
+					Event</button>
+			</form>
+			<form id="inputevent" method="GET" action="/removemember">
+				<button class="button Header__item HeaderButton">Remove
+					Member</button>
+			</form>
+			<form id="inputevent" method="GET" action="/addclass">
+				<button class="button Header__item HeaderButton">Remove
+					Class</button>
+			</form>
+
+		</div>
+	</div>
+
+</body>
+</html>

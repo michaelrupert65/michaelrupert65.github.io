@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Submission Success</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="login.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="container">
+		<div id="form-container">
+			<form>
+					<h1> The Event: </h1>
+				    <p th:text="'Event Id: ' + ${event.eventId}" />
+				    <p th:text="'Event Name: ' + ${event.eventName}" />
+				    <p th:text="'Event Facility: ' + ${event.eFacilityName}" />
+				    <p th:text="'Event Address: ' + ${event.eventAddress}" />
+				    <p th:text="'Event City: ' + ${event.eventCity}" />
+				    <p th:text="'Event State: ' + ${event.eventState}" />
+				    <p th:text="'Event ZipCode: ' + ${event.eventZip}" />
+				    <p th:text="'Event Country: ' + ${event.eventCountry}" />
+				    <p th:text="'Event Region: ' + ${event.eventRegion}" />
+				    <p th:text="'Event Description: ' + ${event.eDescription}" />
+				    <p th:text="'Instruction Name: ' + ${event.eTeacherName}" />
+				    <p th:text="'Instructor Email: ' + ${event.eTeacherEmail}" />
+				    <p th:text="'Event Date: ' + ${event.eventDate}" />
+				    <h1> has been successfully submitted!</h1>
+				<a href="/settings">Submit Another Event.</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

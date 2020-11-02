@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Museum and Events</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET"
+				action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="form-container"
+		style="display: block; text-align: center; background: linear-gradient(217deg, rgba(8, 86, 92, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(46, 112, 46, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(148, 148, 218, 0.8), rgba(0, 0, 255, 0) 70.71%); border-radius: 5px;">
+		<span>
+			<h2
+				style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center; color: white; margin: 2px; border-radius: 5px;">
+				Search for a Museum, Event or Class</h2>
+			<form style>
+				<input class="form-input" type="text" placeholder="Location"
+					name="location" /> <input class="form-input" id="artStyle"
+					type="text" placeholder="Art Discipline" /> <input
+					class="form-input" type="text" placeholder="Month" name="Month" />
+				<input class="form-input" type="text" placeholder="Year" name="Year" />
+				<select name="searchType">
+					<option>CHOOSE A SEARCH</option>
+					<option>Art Museum</option>
+					<option>Class</option>
+					<option>Event</option>
+				</select> <input class="form-input" id="forgot" type="submit" value="Search"
+					style="background-color: goldenrod;"
+					onsubmit="return addDataToTbody(document.querySelector('#artEvents tbody'),createDataObject())" />
+			</form>
+
+
+		</span>
+
+	</div>
+
+</body>
+</html>

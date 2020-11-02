@@ -1,0 +1,271 @@
+@charset "ISO-8859-1";
+
+@font-face {
+	font-family: 'Yatra One';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/yatra-one-v7-latin-regular.eot');
+	/* IE9 Compat Modes */
+	src: local('Yatra One Regular'), local('YatraOne-Regular'),
+		url('./fonts/yatra-one-v7-latin-regular.eot?#iefix')
+		format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/yatra-one-v7-latin-regular.woff2') format('woff2'),
+		/* Super Modern Browsers */
+       url('./fonts/yatra-one-v7-latin-regular.woff') format('woff'),
+		/* Modern Browsers */
+       url('./fonts/yatra-one-v7-latin-regular.ttf') format('truetype'),
+		/* Safari, Android, iOS */
+       url('./fonts/yatra-one-v7-latin-regular.svg#YatraOne')
+		format('svg'); /* Legacy iOS */
+}
+
+.flex-container {
+	display: inline-flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content:center;
+	width: 100%;
+}
+
+.customers {
+	border-collapse: collapse;
+	border: 5px solid red;
+	width: 34%;
+	float: right;
+	font-family: Arial, "sans-serif";
+	color: green;
+	font-weight: bold;
+	font-style: italic;
+	text-align: left;
+	font-size: 11px;
+}
+
+.Header {
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #56727C;
+	border-radius: 10px;
+	box-shadow: 0 1.5rem 1rem 0 rgba(0, 0, 0, 0.349), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+	font-display: auto;
+	border-color: goldenrod;
+	border-width: 0.75rem;
+	background: linear-gradient(217deg, rgba(8, 86, 92, 0.8),
+		rgba(255, 0, 0, 0) 70.71%),
+		linear-gradient(127deg, rgba(46, 112, 46, 0.8), rgba(0, 255, 0, 0)
+		70.71%), linear-gradient(336deg, rgba(148, 148, 218, 0.8),
+		rgba(0, 0, 255, 0) 70.71%);
+}
+
+.Header__item:hover {
+	color: #14396A !important;
+	background: #CF3AAC;
+	background: linear-gradient(to top, #e7a0d7, #8ecaf0);
+	border-radius: 10px;
+}
+
+.Header__section {
+	display: flex;
+	align-items: center;
+}
+
+.Header__item {
+	padding: 5px 15px;
+	font-size: 20px;
+}
+
+.Header__item+.Header__item {
+	margin-left: 5px;
+}
+
+.HeaderLogo {
+	font-size: 20px;
+	line-height: 0;
+	color: white;
+}
+
+.HeaderButton {
+	cursor: pointer;
+	color: #D9E9EF;
+}
+.button{
+	background-color:transparent;
+	padding: 0;
+	border: none;
+	font-size:20px;
+	padding: 5px 15px;
+	font-size: 20px;
+	font-family: Times New Roman;
+}
+
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	text-align:center;
+	justify-content: center;
+	width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	box-shadow: 0 1.5rem 1rem 0 rgba(0, 0, 0, 0.349), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.input[type=submit] {
+	padding: 5px;
+	font-family:'Yatra One';	
+	border: 2px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 1.5rem 1rem 0 rgba(0, 0, 0, 0.349), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);		
+}
+
+#button_1 {
+	font-family: 'Yatra One';
+	background-image: url(button_1.jpg);
+	background-size: cover;
+	font-size: 2rem;
+	text-align: center;
+	padding: 180px 0;
+	border-color: rgb(20, 157, 221);
+	border-width: 0.75rem;	
+	flex: 1;
+	cursor: pointer;
+}
+
+#button_2 {
+	font-family: 'Yatra One';
+	background-image: url(button_2.jpg);
+	background-size: cover;
+	font-size: 2rem;
+	font-display: auto;
+	text-align: center;
+	padding: 180px 0;
+	border-color: goldenrod;
+	border-width: 0.75rem;
+	flex: 1;
+	cursor: pointer;
+}
+
+#button_3 {
+	font-family: 'Yatra One';
+	background-image: url(button_3.jpg);
+	background-size: cover;
+	font-size: 2rem;
+	font-display: auto;
+	text-align: center;
+	padding: 180px 0;
+	border-color: rgb(182, 51, 112);
+	border-width: 0.75rem;
+	flex: 1;
+	cursor: pointer;
+}
+
+#button_4 {
+	font-family: 'Yatra One';
+	background-image: url(button_4.jpg);
+	background-size: cover;
+	font-size: 2rem;
+	font-display: auto;
+	text-align: center;
+	padding: 180px 0;
+	border-color: rgba(72, 235, 139, 0.616);
+	border-width: 0.75rem;
+	flex: 1;
+	cursor: pointer;
+}
+
+#artEvents {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#artEvents td, #artEvents th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#artEvents tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#artEvents tr:hover {
+	background-color: #ddd;
+}
+
+#artEvents th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #7fa79e;
+	color: black;
+}
+
+.form-input {
+	display: inline;
+	margin: auto;
+	font-size: 14pt;
+	background-color: whitesmoke;
+}
+
+.form-input:hover {
+	color: #14396A !important;
+	background: #CF3AAC;
+	background: linear-gradient(to top, #e7a0d7, #8ecaf0);
+}
+
+#form-container {
+	display: inline-flex;
+	justify-items: center;
+	justify-content: center;
+	/* width: 85%; */
+	margin: auto;
+}
+#classlist {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#classlist td, #classlist th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#classlist tr:nth-child(even){background-color: #f2f2f2;}
+
+#classlist tr:hover {background-color: #ddd; }
+
+#classlist th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+#class-form-containter{
+	display: block;
+	align-items: center;
+	justify-content: center;
+	/* width: 85%; */
+	margin: auto;
+}
+#newDisciplineContainer{
+	width: 85%;
+    margin: auto; 
+    align-items:center;
+    justify-content: center;
+    border: solid rgb(128, 0, 255);
+    border-width: 0.25rem;
+    
+    background: rgba(148, 148, 218, 0.4);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgba(148, 148, 218, 0.5);
+    
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+	
+}

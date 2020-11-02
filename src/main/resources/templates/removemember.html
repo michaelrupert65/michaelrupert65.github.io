@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="login.css" type="text/css" rel="stylesheet" />
+<title>Remove Event</title>
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newDisciplineContainer">
+		<div id="form-container">
+			<form th:action="@{/deletemember}" method="GET" style="line-height: 25%">
+				<h3 id="inputevent">Remove Member From the DB</h3>
+				<br> <br> <label id="inputevent">Member First Name</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mFirstName}" />
+				</p>
+				<label id="inputevent">Member Last Name</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mLastName}" />
+				</p>
+				<label id="inputevent">Member Email </label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.memberEmail}" />
+				</p>						
+				<p id="inputevent">
+					<input type="submit" value="Delete" /> <input type="reset"
+						value="Reset" />
+				</p>			
+			</form>
+		</div>
+	</div>
+	</body>
+</html>
+

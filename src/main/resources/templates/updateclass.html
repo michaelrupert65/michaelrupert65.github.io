@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="login.css" type="text/css" rel="stylesheet" />
+<title>Update Class</title>
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newDisciplineContainer">
+		<div id="form-container">
+			<form th:action="@{/updateclassinfo}" method="post">
+				<h3 id="inputevent">Update Class Description to DB</h3>
+				<label id="inputevent">Class Id</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{course.courseId}" />
+				</p>
+				<label id="inputevent"> New Class Description </label>
+				<p id="inputevent">
+					<input type="text" th:field="*{course.courseDescr}" />
+				</p>
+				<label id="inputevent"> Or find class on List of all
+					classes. </label>
+				<p id="inputevent">
+					<select th:name="courseIdSelected">
+						<option th:each="classList : ${classList}"
+							th:value="${classList.courseId}"
+							th:text="${classList.courseName}"></option>
+					</select>
+				</p>
+				<p id="inputevent">
+					<input type="submit" value="Submit" /> <input type="reset"
+						value="Reset" />
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+

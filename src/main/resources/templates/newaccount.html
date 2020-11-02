@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Account</title>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET"
+				action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newAccountContainer">
+		<div id="form-container">
+			<form th:action="@{/addnewmember}" method="post"
+				style="line-height: 25%">
+				<h3 id="inputevent">Create a New Account</h3>
+				<br> <br> <label id="inputevent">First Name</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mFirstName}" />
+				</p>
+				<label id="inputevent">Last Name </label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mLastName}" />
+				</p>
+				<label id="inputevent">Address</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mAddress}" />
+				</p>
+				<label id="inputevent">City</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mCity}" />
+				</p>
+				<label id="inputevent">State</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mState}" />
+				</p>
+				<label id="inputevent">ZipCode</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mZipCode}" />
+				</p>
+				<label id="inputevent">Country</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mCountry}" />
+				</p>
+				<label id="inputevent">Region</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mRegion}" />
+				</p>
+				<label id="inputevent">Email</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.memberEmail}"  required/>
+				</p>
+				<label id="inputevent">Password</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{member.mPassword}" />
+				</p>
+				<label id="inputevent">Confirm Password</label>
+				<p id="inputevent">
+					<input type="text" name="vPassword" id="password" />
+				</p>
+				<p th:if="${#fields.hasErrors('member.memberEmail')}" th:errors="*{member.memberEmail}">Email Field must not be Blank!</p>
+			
+<!-- 				<p th:if="${#fields.hasErrors('teacher.teacherEmail')}" th:errors="*{teacher.teacherEmail}">Email Field must not be Blank!</p> -->
+	
+
+				<input type="hidden" th:field="*{member.mRole}" value="USER"
+					th:value="${member.mRole}" />
+				<p id="inputevent">
+					<input type="submit" value="Submit" /> <input type="reset"
+						value="Reset" />
+				</p>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
