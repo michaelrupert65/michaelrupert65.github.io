@@ -1,0 +1,50 @@
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="login.css" type="text/css" rel="stylesheet" />
+<title>Success</title>
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newDisciplineContainer">
+		<div id="form-container">
+			<form>
+					<h1> The Class: </h1>
+				    <p th:text="'Class Id: ' + ${course.courseId}" />
+				    <p th:text="'Class Name: ' + ${course.courseName}" />
+				    <p th:text="'Class Description: ' + ${course.courseDescr}" />
+				    <p th:text="'Class Discipline: ' + ${disc.disciplineName}" />
+				    <p th:text="'Class Instructor: ' + ${teacher.firstName} + ' ' + ${teacher.lastName}" />
+	
+				    <h1> has been successfully submitted!</h1>
+				<a href="/addclass">Submit Another Class.</a>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+@charset "ISO-8859-1";
+@font-face {
+    font-family: 'Yatra One';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/yatra-one-v7-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Yatra One Regular'), local('YatraOne-Regular'),
+         url('./fonts/yatra-one-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/yatra-one-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/yatra-one-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/yatra-one-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/yatra-one-v7-latin-regular.svg#YatraOne') format('svg'); /* Legacy iOS */
+  }
+body {
+    background-color: grey;
+}
+
+textarea {
+    height: 8rem;
+}
+
+/* Provides password protection while entering with ability to show password while entering */
+input[type="password" i] {
+    -webkit-text-security: disc !important;
+    padding: 1px 2px;
+}
+
+
+.form-input {
+    display: block;
+    margin: auto;
+    width: 90%;
+    margin-top: 3%;
+    background-color:whitesmoke;  
+}
+
+.form-input:hover {
+    color: #14396A !important;
+    background: #CF3AAC;
+    background: linear-gradient(to top, #e7a0d7, #8ecaf0);
+  }
+
+#container {
+    width: 24rem;
+    margin: auto;
+    align-items:center;
+    border: solid navy;
+    border-width: 0.25rem;
+    color: white;
+    background-image: url("login_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:green;
+    border-radius: 5%; 
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+}
+#submitEventContainer{
+    width: 24rem;
+    margin: auto; 
+    align-items:center;
+    border: solid navy;
+    border-width: 0.25rem;
+    color: white;
+    background:linear-gradient(27deg, rgba(8, 86, 92, 0.8), rgba(255,0,0,0) 70.71%),
+               linear-gradient(227deg, rgba(46, 112, 46, 0.8), rgba(0,255,0,0) 70.71%),
+               linear-gradient(156deg, rgba(148, 148, 218, 0.8), rgba(0,0,255,0) 70.71%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:green;
+    border-radius: 5%; 
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+}
+#newAccountContainer{
+    width: 24rem;
+    margin: auto; 
+    align-items:center;
+    border: solid rgb(255, 0, 0);
+    border-width: 0.25rem;
+    color: white;
+    background:linear-gradient(27deg, rgba(8, 86, 92, 0.8), rgba(255,0,0,0) 70.71%),
+               linear-gradient(227deg, rgba(46, 112, 46, 0.8), rgba(0,255,0,0) 70.71%),
+               linear-gradient(156deg, rgb(255, 128, 0), rgba(0,0,255,0) 70.71%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgb(128, 0, 255);
+    border-radius: 5%; 
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+}
+#newDisciplineContainer{
+	width: 24rem;
+    margin: auto; 
+    align-items:center;
+    border: solid rgb(128, 0, 255);
+    border-width: 0.25rem;
+    color: white;
+    background:linear-gradient(27deg, rgba(8, 86, 92, 0.8), rgba(255,0,0,0) 70.71%),
+               linear-gradient(227deg, rgba(46, 112, 46, 0.8), rgba(0,255,0,0) 70.71%),
+               linear-gradient(156deg, rgb(64, 0, 64), rgba(0,0,255,0) 70.71%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgb(128, 0, 255);
+    border-radius: 5%; 
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+	
+}
+#newTeacherContainer{
+	width: 24rem;
+    margin: auto; 
+    align-items:center;
+    border: solid rgb(255, 128, 0);
+    border-width: 0.25rem;
+    color: white;
+    background:linear-gradient(27deg, rgba(8, 86, 92, 0.8), rgb(128, 128, 255) 70.71%),
+               linear-gradient(227deg, rgba(46, 112, 46, 0.8), rgba(0,255,0,0) 70.71%),
+               linear-gradient(156deg, rgb(255, 255, 0), rgba(0,0,255,0) 70.71%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color:rgb(255, 128, 0);
+    border-radius: 5%; 
+    box-shadow: 1rem 0.75rem 1.5rem 0 rgba(250, 246, 246, 0.431), 0 6px 20px 0 rgba(161, 98, 98, 0.19);
+        
+	
+}
+#inputevent{	
+	align-items:center;
+	display: flex;
+  	justify-content: center;
+}
+input[type="text"]:hover{
+	color: #14396A !important;
+    background: #CF3AAC;
+    background: linear-gradient(to top, #e7a0d7, #8ecaf0);	
+    cursor: pointer;
+}
+.button{
+	background-color:transparent;
+	padding: 0;
+	border: none;
+	font-size:20px;
+	padding: 5px 15px;
+	font-size: 20px;
+	font-family: Times New Roman;
+	cursor: pointer;
+}
+.form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	width: 50%;
+	height: 50%;
+	border-radius: 10px;
+	box-shadow: 0 1.5rem 1rem 0 rgba(0, 0, 0, 0.349), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+#button-form{
+	justify-content: center;
+}
+
+#title-container {
+    display: block;
+    width: 85%;
+    margin: auto;
+    text-align: center;    
+    line-height: 10px;
+    
+}
+
+#form-container {
+    display: block;
+    align-items: center;
+    width: 85%;
+    margin: auto;    
+    justify-content:center;
+}
+
+#submit {
+    height: 3rem;
+    font-family: 'Yatra One';
+    color: #14396A !important;
+    font-size: 20px;
+    text-shadow: 1px 1px 0px #7CACDE;
+    margin-bottom: 1rem;   
+    background-color: #bed8fa;     
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 0.75rem;   
+    padding: 7px 16px;  
+    border: 2px solid #3866A3;
+    cursor: pointer;
+}
+
+#forgot
+{
+    font-family: 'Yatra One';
+    text-shadow: 1px 1px 0px rgb(151, 150, 149);
+    font-size: 20px;
+    height: 3rem;
+    margin-bottom: 1rem;
+    background-color: coral;  
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 0.75rem; 
+    padding: 7px 16px;  
+    border: 2px solid #3866A3;  
+    cursor: pointer;
+}
+/* ######For the header consistancy this appears on other style sheets###### */
+.Header {   
+    display: flex;
+    flex:1; 
+    justify-content: space-between;  
+    padding: 10px;
+    background-color: #56727C;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 1rem 0 rgba(0, 0, 0, 0.349), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-display: auto;
+    border-color: goldenrod;
+    border-width: 0.75rem;
+    background:linear-gradient(217deg, rgba(8, 86, 92, 0.8), rgba(255,0,0,0) 70.71%),
+               linear-gradient(127deg, rgba(46, 112, 46, 0.8), rgba(0,255,0,0) 70.71%),
+               linear-gradient(336deg, rgba(148, 148, 218, 0.8), rgba(0,0,255,0) 70.71%);
+    
+  } 
+  
+  .Header__item:hover {
+    color: #14396A !important;
+    background: #CF3AAC;
+    background: linear-gradient(to top, #e7a0d7, #8ecaf0);
+    border-radius: 10px;
+  }
+  
+  .Header__section {  
+    display: flex;
+    align-items: center;
+  }
+  .Header__item {
+    padding: 5px 15px;
+    font-size: 20px;
+  }
+  .Header__item + .Header__item {
+    margin-left: 5px;
+  } 
+  .HeaderLogo {
+    font-size: 20px;
+    line-height: 0;
+    color: white;
+  }
+  
+  .HeaderButton {
+    cursor: pointer;
+    color: #D9E9EF;
+  }

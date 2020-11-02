@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>ArTeach Edit Event</title>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="submitEventContainer">
+		<div id="form-container">
+			<form th:action="@{/event}" th:object="${event}" method="post"
+				style="line-height: 25%">
+				<h3 id="inputevent">Edit  Event</h3>
+				<br> <br> <label id="inputevent">Event Name</label>
+				<p id="inputevent">
+					<select  th:name="eventList">
+						<option th:each="eventList : ${eventList}" th:value="${eventList.eventId}" 
+							th:text="${eventList.eventName}"></option>
+					</select>
+				</p>
+				<label id="inputevent">Facility </label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eFacilityName}" />
+				</p>
+				<label id="inputevent">Event Address</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventAddress}" />
+				</p>
+				<label id="inputevent">Event City</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventCity}" />
+				</p>
+				<label id="inputevent">Event State</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventState}" />
+				</p>
+				<label id="inputevent">Event ZipCode</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventZip}" />
+				</p>
+				<label id="inputevent">Event Country</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventCountry}" />
+				</p>
+				<label id="inputevent">Event Region</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventRegion}" />
+				</p>
+				<label id="inputevent">Event Description</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eDescription}" />
+				</p>
+				<label id="inputevent">Contact Name</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eTeacherName}" />
+				</p>
+				<label id="inputevent">Contact Email</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eTeacherEmail}" />
+				</p>
+				<label id="inputevent">Event Date</label>
+				<p id="inputevent">
+					<input type="text" th:field="*{eventDate}" />
+				</p>
+				<p id="inputevent">
+					<input type="submit" value="Submit" /> <input type="reset"
+						value="Reset" />
+				</p>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

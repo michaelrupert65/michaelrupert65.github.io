@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Login to ArTeach</title>
+<link href="login.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET"
+				action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="container">
+		<div id="title-container">
+			<h1
+				style="color: blue; font-family: 'Times New Roman', Times, serif;">Login
+				Page</h1>
+			<p style="color: blue">No Account?</p>
+
+		</div>
+		<div id="form-container">
+			<form th:action="@{/login/authenticate}" method="post">
+				<p id="inputevent">
+					<a th:href="@{/newaccount}">Click here to create a new account.</a>
+				</p>
+				<p>
+					<input name="email" class="form-input" id="memberEmail" type="text"
+						placeholder="User email" />
+				</p>
+				<p>
+					<input class="form-input" name="password" id="mPassword"
+						type="password" placeholder="Password" />
+				</p>
+				<p>
+					<input class="form-input" id="submit" type="submit" value="Login" />
+				</p>
+				<p>
+					<input class="form-input" id="forgot" type="submit"
+						value="Forgot Credentials" />
+				</p>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

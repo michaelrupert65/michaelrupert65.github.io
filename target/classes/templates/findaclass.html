@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Find Resources</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newDisciplineContainer">
+		<div id="class-form-container">
+			
+			<table id=classlist>
+				<thead>
+					<tr>
+						<th>Class Id</th>
+						<th>Class Name</th>
+						<th>Class Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${classList.empty}">
+						<td colspan="2">No Classes Available</td>
+					</tr>
+					<tr th:each="course : ${classList}">
+						<td><span th:text="${course.courseId}"> Class Id </span></td>
+						<td><span th:text="${course.courseName}"> Class Name </span></td>
+						<td><span th:text="${course.courseDescr}"> Class Description  </span></td>						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

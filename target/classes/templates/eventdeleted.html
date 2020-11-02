@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Event Delete Success</title>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="newDisciplineContainer">
+		<div id="form-container">
+			<p>Event Successfully Removed!</p><br>
+			<p>This is a list of the remaining Events.</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Event Name</th>
+						<th>Event Facility</th>
+						<th>Event Date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${eventList.empty}">
+						<td colspan="2">No Events Available</td>
+					</tr>
+					<tr th:each="event : ${eventList}">
+						<td><span th:text="${event.eventName}"> Event Name </span></td>
+						<td><span th:text="${event.eFacilityName}"> Event Facility </span></td>
+						<td><span th:text="${event.eventDate}"> Event Date </span></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

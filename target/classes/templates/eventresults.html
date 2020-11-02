@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div class="Header">
+		<div class="Header__section">
+			<form method="GET" action="/about">
+				<button class="button Header__item HeaderButton">About</button>
+			</form>
+			<form method="GET" action="/contact">
+				<button class="button Header__item HeaderButton">Contact</button>
+			</form>
+		</div>
+		<p style="color: white; font-size: 25px;">
+			<strong>Welcome to ArTeach</strong>
+		</p>
+		<div class="Header__section">
+			<form sec:authorize="hasRole('ROLE_ADMIN')" method="GET" action="/addrecords">
+				<button class="button Header__item HeaderButton">Admin</button>
+			</form>
+			<form method="GET" action="/">
+				<button class="button Header__item HeaderButton">Home</button>
+			</form>
+			<form method="GET" action="/logout">
+				<button class="button Header__item HeaderButton">Log out</button>
+			</form>
+		</div>
+	</div>
+	<div id="flex-container" style="border-radius: 10px;">
+		<table id="artEvents">
+			<thead>
+				<tr>
+					<th colspan="5"><br>
+						<h2
+							style="font-family: Georgia, 'Times New Roman', Times, serif; text-align: center;">Your
+							Search Results</h2></th>
+				</tr>
+				<tr>
+					<th style="font-size: 16pt">Institution</th>
+					<th style="font-size: 16pt">Contact</th>
+					<th style="font-size: 16pt">Address</th>
+					<th style="font-size: 16pt">Phone</th>
+					<th style="font-size: 16pt">Email</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</body>
+</html>
